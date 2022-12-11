@@ -1,0 +1,50 @@
+
+<view class="container">
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+<!-- 学号 -->
+      <view class="page-section">
+        <view class="page-section-title">学号</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd" style="margin: 30rpx 0" >
+              <input class="weui-input" name="snumber" placeholder="请输入学号" />
+            </view>
+          </view>
+        </view>
+      </view>
+<!-- 姓名 -->
+      <view class="page-section">
+        <view class="page-section-title">姓名</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd" style="margin: 30rpx 0" >
+              <input class="weui-input" name="name" placeholder="请输入姓名" />
+            </view>
+          </view>
+        </view>
+      </view>
+<!-- 签到口令 -->
+      <view class="page-section">
+        <view class="page-section-title">签到口令</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd" style="margin: 30rpx 0" >
+              <input class="weui-input" name="cypher" placeholder="请输入签到口令" />
+            </view>
+          </view>
+        </view>
+      </view>
+<!-- 获取地理位置 暂未实现是 -->
+<navigator url = "/pages/index/index" >
+  <button style="margin: 30rpx 0" type ="hover-class" bindtap=" getLocation"> 获取定位</button>
+</navigator>
+<!-- 提交/重置 -->
+      <view class="btn-area">
+        <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
+        <button style="margin: 30rpx 0" formType="reset">Reset</button>
+      </view>
+    </form>
+  </view>
+
+</view>

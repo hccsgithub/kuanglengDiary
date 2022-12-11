@@ -1,14 +1,18 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/signIn/signIn",
     "pages/logs/logs"
+
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "狂愣日记",
+    "navigationBarTextStyle":"white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
+
+
 }
