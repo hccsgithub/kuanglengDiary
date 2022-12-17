@@ -46,7 +46,7 @@
       },
       {
         "text":"我的签到",
-        "pagePath": "pages/history/history"
+        "pagePath": "pages/historylist/historylist"
       },
       {
         "text":"个人中心",

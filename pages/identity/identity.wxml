@@ -1,10 +1,14 @@
 <!--pages/identity/identity.wxml-->
 <view class='p_type1'>
-  <button plain='true' open-type="getUserInfo" bindgetuserinfo="modalinput1"><image src='/image/student.png'></image></button>
+  <button plain='true' open-type="getUserInfo" bindgetuserinfo="modalinput1">
+  <!-- <image src='/image/student.png'></image> -->
+  </button>
 </view>
 <text class='type_text'>我是学生</text>
 <view class='p_type2'>
-  <button plain='true' open-type="getUserInfo" bindgetuserinfo="modalinput2"><image src='/image/teacher.png'></image></button>
+  <button plain='true' open-type="getUserInfo" bindgetuserinfo="modalinput2">
+  <!-- <image src='/image/teacher.png'></image> -->
+  </button>
 </view>
 <text class='type_text'>我是老师</text>
 <view>

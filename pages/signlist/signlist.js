@@ -31,6 +31,7 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
+        
         that.setData({
           hiddenSign: !that.data.hiddenSign
         })
@@ -38,7 +39,9 @@ Page({
           title: '取消成功',
           icon: 'success'
         })
-        
+        wx.redirectTo({
+          url: '/pages/hsignlist/hsignlist'
+        })
       },
       fail: function (res) { },
       complete: function (res) { },

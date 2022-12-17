@@ -82,7 +82,7 @@ Page({
                       icon: 'success'
                     })
                     wx.redirectTo({
-                      url: '../signlist/signlist'
+                      url: '../ssignlist/ssignlist'
                     })
                   } else {
                     wx.showToast({
