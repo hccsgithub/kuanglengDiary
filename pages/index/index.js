@@ -44,5 +44,15 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  signin(){
+    wx.redirectTo({
+      url:'/pages/signIn/signIn',
+    })
+  },
+  create(){
+    wx.redirectTo({
+      url:'/pages/create/create'
+    })
   }
 })

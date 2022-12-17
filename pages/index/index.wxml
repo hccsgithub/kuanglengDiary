@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
+    <block wx:if="{{canIUseOpenData}}" >
+      <view class="userinfo-avatar" bindtap="bindViewTap" >
         <open-data type="userAvatarUrl"></open-data>
       </view>
       <open-data type="userNickName"></open-data>
@@ -18,11 +18,14 @@
     </block>
   </view>
 
-<view class="btn-area" >
-  <navigator  url = "/pages/signIn/signIn">
-    <button style="margin: 30rpx 0" type="primary">签到</button>
-</navigator>
+<view class="btn-area" style="margin-top:130px">
+  
+    <button style="margin: 30rpx 0;background-color: #f8c72c;" type="primary" bindtap="signin">签到</button>   
+    <button style="margin: 30rpx 0;background-color: #f8c72c;" type="primary" bindtap="create">创建签到</button>
+
+
 </view>
+
 
 </view>
 

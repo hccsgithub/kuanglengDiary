@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "课程首页",
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#f8c72c"
+}
