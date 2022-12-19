@@ -8,7 +8,7 @@
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="weui-cell__bd" style="margin: 30rpx 0" >
-              <input class="weui-input" name="snumber" placeholder="请输入学号" />
+              <input class="weui-input" name="number" placeholder="请输入学号" />
             </view>
           </view>
         </view>
@@ -24,7 +24,29 @@
           </view>
         </view>
       </view>
-<!-- 签到口令 -->
+<!-- 性别 -->
+      <view class="page-section">
+        <view class="page-section-title">性别</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd" style="margin: 30rpx 0" >
+              <input class="weui-input" name="gender" placeholder="请输入性别" />
+            </view>
+          </view>
+        </view>
+      </view>
+<!-- 年龄 -->
+      <view class="page-section">
+        <view class="page-section-title">年龄</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd" style="margin: 30rpx 0" >
+              <input class="weui-input" name="age" placeholder="请输入年龄" />
+            </view>
+          </view>
+        </view>
+      </view>
+<!-- 签到口令
       <view class="page-section">
         <view class="page-section-title">签到口令</view>
         <view class="weui-cells weui-cells_after-title">
@@ -34,11 +56,7 @@
             </view>
           </view>
         </view>
-      </view>
-<!-- 获取地理位置 暂未实现是 -->
-<!-- <navigator url = "/pages/index/index" >
-  <button style="margin: 30rpx 0;" type ="hover-class" bindtap=" getLocation"> 获取定位</button>
-</navigator> -->
+      </view> -->
 <!-- 提交/重置 -->
       <view class="btn-area">
         <button  class="btn-sub" style="background:#f8c72c" type="primary" formType="submit" bindtap='GPSsubmit'>提交</button>

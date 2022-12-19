@@ -1,5 +1,17 @@
 <!--pages/create/create.wxml-->
-<view class="inputView" style="margin-top: 40% ">
-  <input class="input" type="number" placeholder="请输入考勤口令" placeholder-style="color: grey" bindinput="keyInput" value='{{sginKey}}' />
+<!-- <view class="inputView" style="margin-top: 40% ">
+  <input class="input" type="number" placeholder="请输入考勤口令" placeholder-style="color: grey" value='{{signKey}}' />
 </view>
-<button class='kaoqin' style="background-color:#f8c72c"type='primary' bindtap='GPSsubmit'>发起考勤</button>
+<button class='kaoqin' style="background-color:#f8c72c"type='submit' bindtap='create'>发起考勤</button> -->
+
+<form bindsubmit='createSign'>
+  <view class="inputView" style="margin-top: 30% ">
+    <input class="input" type='number' name='signName' placeholder="请输入考勤名称"></input>
+  </view>
+  <view class="inputView" style="margin-top: 10% ">
+    <input class="input" type='number' name='signKey' placeholder="请输入考勤口令"></input>
+  </view>
+  <view class='ligin-button' style="margin-top: 10% ">
+    <button style="background-color:#f8c72c" formType="submit" type='primary'>点击提交</button>
+  </view>
+</form>

@@ -14,7 +14,7 @@ Page({
   // 事件处理函数
   bindViewTap() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../logs/logs'//访问日期
     })
   },
   onLoad() {
@@ -47,12 +47,16 @@ Page({
   },
   signin(){
     wx.redirectTo({
-      url:'/pages/signIn/signIn',
+      url:'/pages/sign/sign',
+      //url:'/pages/signIn/signIn',
     })
   },
   create(){
     wx.redirectTo({
       url:'/pages/create/create'
     })
+  },
+  message(){
+    console.log(wx.getStorageSync('user'))
   }
 })

@@ -22,10 +22,6 @@
   
     <button style="margin: 30rpx 0;background-color: #f8c72c;" type="primary" bindtap="signin">签到</button>   
     <button style="margin: 30rpx 0;background-color: #f8c72c;" type="primary" bindtap="create">创建签到</button>
-
-
 </view>
-
-
 </view>
 

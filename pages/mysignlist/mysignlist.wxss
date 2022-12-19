@@ -1,0 +1,31 @@
+/* pages/mysignlist/mysignlist.wxss */
+/* pages/historylist/historylist.wxss */
+page {
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.record {
+  height: 70px;
+  margin-top: 20px;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border-radius: 5px; /*圆角弧度 */
+  border-color: black; /*边框颜色 */
+  background-color: rgb(223, 169, 169);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.times {
+  color: green;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.time {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  color: gainsboro;
+}

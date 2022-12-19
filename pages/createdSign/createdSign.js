@@ -1,46 +1,30 @@
-// pages/historylist/historylist.js
+// pages/createdSign/createdSign.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    record: [],
-    index: ""
+    createdSign: [],
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    wx.request({
-      url: 'https://www.xxxx.com',
-      data: {
-        lessonid: options.lessonid,
-        flag:'history'
-      },
-      method: 'POST',
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded' 
-      },
-      success: function (res) {
-        if (res.data == null||res.data=='') {
-          wx.showToast({
-            title: '暂无考勤纪录',
-            icon: 'none',
-            duration:2500
-          })
-        } else {
-          that.setData({
-            record: res.data
-          })
-        }
-      },
-      fail: function (res) { },
-      complete: function (res) { },
+      wx.cloud.database().collection('signlist').get()
+      .then(res=>
+        {
+          console.log('请求数据成功',res.data)
+          this.setData(
+            {
+              createdSign:res.data
+            }
+          )
+        })
+        .catch(err=>{
+          console.log('请求数据失败',err)
+        })
+  },
+  getSignList:function(){
+    wx.redirectTo({
+      url: '',
     })
-
   },
 
   /**

@@ -1,0 +1,7 @@
+<!--pages/createdSign/createdSign.wxml-->
+<view wx:for="{{createdSign}}">
+<view class="lesson" bindtap="getSignList">
+  签到名称：{{item.signName}}
+  签到码：{{item.signKey}}
+</view>
+</view>

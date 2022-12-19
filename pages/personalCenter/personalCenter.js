@@ -1,4 +1,4 @@
-// pages/profile/profile.js
+// pages/personalCenter/personalCenter.js
 const App = getApp();
 Page({
   data: {
@@ -8,8 +8,6 @@ Page({
     hiddenmodalput: true,
     viewhidden1: 'none',
     viewhidden2: 'block',
-    slesson: "",
-    sclass: ""
   },
   
   onLoad: function (options) {
@@ -84,33 +82,33 @@ Page({
       })
     }
   },
-  addCourse: function () {
-    var that = this;
-    var userid = wx.getStorageSync('openid');
-    wx.request({
-      url: 'https://www.xxxx.com',
-      data: {
-        userid: userid,
-        slesson: that.data.slesson,
-        sclass: that.data.sclass,
-        flag: 'addc'
-      },
-      method: 'POST',
-      header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      success: function (res) {
-        console.log(res.data)
-        wx.showToast({
-          title: '课程添加成功！',
-          icon: 'success'
-        })
-      },
-      fail: function (res) {
-        console.log("课程添加失败");
-      },
-      complete: function (res) {
-       }, 
-    })
-  },
+  // addCourse: function () {
+  //   var that = this;
+  //   var userid = wx.getStorageSync('openid');
+  //   wx.request({
+  //     url: 'https://www.xxxx.com',
+  //     data: {
+  //       userid: userid,
+  //       slesson: that.data.slesson,
+  //       sclass: that.data.sclass,
+  //       flag: 'addc'
+  //     },
+  //     method: 'POST',
+  //     header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //     success: function (res) {
+  //       console.log(res.data)
+  //       wx.showToast({
+  //         title: '课程添加成功！',
+  //         icon: 'success'
+  //       })
+  //     },
+  //     fail: function (res) {
+  //       console.log("课程添加失败");
+  //     },
+  //     complete: function (res) {
+  //      }, 
+  //   })
+  // },
   myInfomation: function () {
     wx.navigateTo({
       url: '../myinfo/myinfo'
@@ -122,9 +120,9 @@ Page({
       url: '../feedback/feedback'
     })
   },
-  historykaoqin:function(){
+  createdSign:function(){
     wx.navigateTo({
-      url: '../history/history'
+      url: '../createdSign/createdSign'
     })
   },
   aboutme:function(){

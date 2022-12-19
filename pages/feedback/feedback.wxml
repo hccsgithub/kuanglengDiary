@@ -5,7 +5,7 @@
 <text >关于狂愣日记</text> 
 </view>
   <view class='style1'> 
-    <textarea   placeholder="你要反馈的问题... "  maxlength='300' bindinput='limit' value="{{suggestText}}"      style="height: 12.3em"/> 
+    <textarea   placeholder="你要反馈的问题... "  maxlength='300' bindinput='limit' value="{{suggestText}}"  style="height: 12.3em"/> 
     <!-- 显示字数 -->
     <view class="clear">
           <text style="color: #ccc; font-size: 14px; float: right; margin-right: 2%;margin-top: 5px;">{{current}} /300</text>
@@ -17,9 +17,10 @@
 
 <view class="weui-footer weui-footer_fixed-bottom">
     <view class="weui-footer__links">
+      <text>\n\n\n\n\n\n\n\n</text>
       <navigator url="" class="weui-footer__link white">联系作者：h</navigator>
     </view>
-    <view class="weui-footer__text">kuangleng</view>
+    <view class="weui-footer__text" >kuangleng</view>
   </view>
 
 </view>

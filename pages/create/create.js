@@ -2,17 +2,40 @@
 Page({
 
   data: {
+    openid :"",
     signKey: "",
-    lessonid: '',
+    signName:"",
     latitude: "",
     longitude: ""
-  },
 
-  keyInput: function (e) {
-    this.setData({
-      signKey: e.detail.value
-    })
-    wx.setStorageSync('signKey', e.detail.value);
+  },
+  createSign:function(e){
+    var that = this;
+    that.data.signKey = e.detail.value.signKey
+    that.data.signName = e.detail.value.signName
+    if (that.data.signKey != "") {
+      console.log(that.data.signKey);
+      wx.cloud.database().collection('signlist')
+      .add({
+        data:{
+            // openid:that.data.openid,
+            signKey:that.data.signKey,
+            signName:that.data.signName
+        }
+      }),
+      wx.showToast({
+        title: '创建签到成功',
+        icon: 'success'
+      }),
+      wx.redirectTo({
+        url: '/pages/createdSign/createdSign',
+      })
+    } else {
+      wx.showToast({
+        title: '口令为不能为空',
+        icon: 'none'
+      })
+    }
   },
   GPSsubmit: function (e) {
     wx.getLocation({
@@ -52,46 +75,22 @@ Page({
 
     }) 
   },
-  kaoqin: function () {
-    var that = this;
-    if (that.data.signKey != "") {
-      console.log(that.data.signKey);
-      console.log("考勤时ID:"+that.data.lessonid);
-      wx.request({
-        url: 'https://www.xxxx.com',
-        data: {
-          id: that.data.lessonid,
-          signKey: that.data.signKey,
-          weidu:that.data.latitude,
-          jingdu:that.data.longitude,
-          flag:'saveSign'
-        },
-        method: 'POST',
-        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        success: function (res) {
-          console.log(res.data);
-           //转到查看考勤名单页面
-          wx.redirectTo({
-            url: '../signlist/signlist?lessonid=' + that.data.lessonid + ''
-          });
-        },
-      })
-    } else {
-      wx.showToast({
-        title: '口令为不能为空',
-        icon: 'none'
-      })
-    }
-  },
- 
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
-    wx.setNavigationBarTitle({ title: options.slesson });
-    this.setData({
-      lessonid: options.lessonid
+    wx.cloud.callFunction({
+      name:'getData'
+    })
+    .then(res =>{
+      console.log('成功',res)
+      this.setData({
+        openid:res.result.openid
+      })
+    })
+    .catch(res =>{
+      console.log('失败',res)
     })
   },
 

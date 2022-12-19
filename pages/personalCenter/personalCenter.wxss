@@ -1,4 +1,4 @@
-/* pages/profile/profile.wxss */
+/* pages/personalCenter/personalCenter.wxss */
 .userinfo {
   margin-top:20px;
   display: flex;

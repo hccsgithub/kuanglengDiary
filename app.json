@@ -1,26 +1,31 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/signlist/signlist",
     "pages/identity/identity",
     "pages/signIn/signIn",
     "pages/create/create",
-    "pages/signlist/signlist",
     "pages/student_index/student_index",
-    "pages/profile/profile",
-    "pages/history/history",
     "pages/historylist/historylist",
     "pages/hsignlist/hsignlist",
     "pages/aboutWe/aboutWe",
     "pages/feedback/feedback",
     "pages/myinfo/myinfo",
     "pages/ssignlist/ssignlist",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/personalCenter/personalCenter",
+    "pages/createdSign/createdSign",
+    "pages/sign/sign",
+    "pages/mysignlist/mysignlist"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "狂愣日记",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#efefef"    
+
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
@@ -41,16 +46,22 @@
     "borderStyle": "white",
     "list": [
       {
+        "selectedIconPath": "/image/main.png",
+        "iconPath": "/image/main0.png",
         "text":"主页",
         "pagePath": "pages/index/index"
       },
       {
+        "selectedIconPath": "/image/mysign.png",
+        "iconPath": "/image/mysign0.png",
         "text":"我的签到",
-        "pagePath": "pages/historylist/historylist"
+        "pagePath": "pages/mysignlist/mysignlist"
       },
       {
+        "selectedIconPath": "/image/user.png",
+        "iconPath": "/image/user0.png",
         "text":"个人中心",
-        "pagePath": "pages/profile/profile"
+        "pagePath": "pages/personalCenter/personalCenter"
       }
     ]
   }

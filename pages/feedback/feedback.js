@@ -19,39 +19,24 @@ Page({
   feedSend:function(){
     var that = this;
     if(that.data.suggestText!=''){
-      var userid = wx.getStorageSync('openid');
-      wx.request({
-        url: 'https://www.xxxx.com',
-        data: {
-          openID: userid,
-          scontent: that.data.suggestText,
-          flag: 'fback'
-        },
-        method: 'POST',
-        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        success: function (res) {
-          console.log(res.data)
-          wx.showToast({
+      wx.cloud.database().collection('feedback')
+      .add({
+        data : {
+          fd : that.data.suggestText
+        }
+      })
+      .then(res => {
+        wx.showToast({
             title: '感谢你的反馈！',
             icon: 'success'
-          })
-        },
-        fail: function (res) {
-          wx.showToast({
+        })
+      })
+      .catch(res=>{
+        wx.showToast({
             title: '提交失败，请检查网络设置！',
             icon: 'none'
-          })
-          console.log("提交失败");
-        },
-        complete: function (res) {
-          that.setData({
-            current: 0,
-            suggestText: ""
-          });
-        },
-      })
-
-      
+        })
+      })  
     }else{
       wx.showToast({
         title: '输入不能为空！',

@@ -1,0 +1,8 @@
+<!--pages/mysignlist/mysignlist.wxml-->
+<view wx:for="{{mysign}}">
+<view class="record">
+  名字：{{item.name}}
+  学号：{{item.number}}
+  签到码：{{item.signKey}}
+</view>
+</view>
