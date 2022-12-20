@@ -9,7 +9,7 @@ Page({
     name: "",
     gender: "",
     age: "",
-    signKey:""
+    signName:""
   },
   formSubmit:function(e){
     var that = this;
@@ -26,7 +26,7 @@ Page({
             name:that.data.name,
             gender:that.data.gender,
             age:that.data.age,
-            signKey:that.data.signKey
+            signName:that.data.signName
         }
       }),
       wx.showToast({
@@ -51,7 +51,7 @@ Page({
     for(let i in options){
       arr.push(options[i]);
     }
-    this.data.signKey = arr[0];
+    this.data.signName = arr[0];
   },
 
   /**

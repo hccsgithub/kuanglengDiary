@@ -21,6 +21,17 @@ Page({
             // openid:that.data.openid,
             signKey:that.data.signKey,
             signName:that.data.signName
+        },
+        success:res => {
+          console.log(res);
+        },
+        fail: res => {
+          console.log("创建过了");
+          console.log(err);
+          wx.showToast({
+            title: '该签到已创建',
+            icon: 'none'
+          })
         }
       }),
       wx.showToast({

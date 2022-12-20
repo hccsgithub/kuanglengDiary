@@ -6,7 +6,7 @@ page {
 }
 
 .record {
-  height: 70px;
+  min-height: 70px;
   margin-top: 20px;
   margin-left: 20rpx;
   margin-right: 20rpx;
@@ -16,6 +16,8 @@ page {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left:10px;
+  padding-right:10px;
 }
 
 .times {

@@ -5,38 +5,56 @@ Page({
    * 页面的初始数据
    */
   data: {
-    signList: [],
-    length1: 0,
+    mysignlist: [],
+    length: 0,
+    openid:"",
+    signName:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    console.log("传参没有：" + options.checkid);
+    var arr = [];
+    for(let i in options){
+      arr.push(options[i]);
+    }
+    this.data.signName = arr[0];
 
-    wx.request({
-      url: 'https://www.xxxx.com',
-      data: {
-        checkid: options.checkid,
-        flag: 'hsign'
-      },
-      method: 'POST',
-      header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      success: function (res) {
-        console.log(res.data);
-        if (res.data == false) {
-        } else {
-          that.setData({
-            signList: res.data,
-            length1: res.data.length
-          })
-        }
-      },
-      fail: function (res) { },
-      complete: function (res) { },
+    var that = this
+      wx.cloud.callFunction({
+        name:'getData'
+      })
+      .then(res =>{
+        console.log('成功',res)
+        this.setData({
+          openid : res.result.openid
+        })
+      })
+      .catch(res =>{
+        console.log('失败',res)
+      })
+    
+    wx.cloud.database().collection('allsignRecord')
+    .where({
+      _openid:this.data.openid,
+     signName:that.data.signName,
     })
+    .get()
+    .then(res=>
+      {
+        console.log('已签到名单',res.data)
+        this.setData(
+          {
+            mysignlist:res.data,
+            length:res.data.length
+          }
+        )
+      })
+      .catch(err=>{
+        console.log('查看签到失败',err)
+      })
+    
 
   },
 

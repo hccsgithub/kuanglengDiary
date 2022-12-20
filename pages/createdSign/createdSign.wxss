@@ -14,9 +14,17 @@ page {
   border-color: black; /*边框颜色 */
   background-color: rgb(199, 233, 238);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-left:10px;
 }
-
+.signpic{
+  margin-right:0px;
+}
+.remove{
+  margin-right:10px;
+  color:grey;
+}
 .mylesson {
   margin-top: 20px;
   align-items: center;

@@ -54,13 +54,13 @@
       {
         "selectedIconPath": "/image/mysign.png",
         "iconPath": "/image/mysign0.png",
-        "text":"我的签到",
+        "text":"签到中心",
         "pagePath": "pages/mysignlist/mysignlist"
       },
       {
         "selectedIconPath": "/image/user.png",
         "iconPath": "/image/user0.png",
-        "text":"个人中心",
+        "text":"我的",
         "pagePath": "pages/personalCenter/personalCenter"
       }
     ]

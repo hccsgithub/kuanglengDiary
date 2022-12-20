@@ -1,3 +1,4 @@
+//const { BasicDataMapping } = require("WechatXrFrame/core/Element")
 // pages/createdSign/createdSign.js
 Page({
   data: {
@@ -16,17 +17,31 @@ Page({
               createdSign:res.data
             }
           )
+          
         })
         .catch(err=>{
           console.log('请求数据失败',err)
         })
   },
-  getSignList:function(){
+  getSignList:function(e){  
+    console.log('获得当前签到',e)
+    console.log('获得当前签到名称',e.currentTarget.dataset.id)
     wx.redirectTo({
-      url: '',
+      url: '../hsignlist/hsignlist?signName='+e.currentTarget.dataset.id,
     })
   },
-
+  Bremove:function(e){
+    console.log('要删除的签到是',e)
+    wx.cloud.database().collection('signlist')
+    .doc(e.currentTarget.dataset.id)
+    .remove()
+    .then(res => {
+      console.log('删除成功',res)
+    })
+    .catch(res => {
+      console.error('删除失败',res)
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

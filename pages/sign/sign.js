@@ -6,17 +6,20 @@ Page({
    */
   data: {
     signKey: "",
+    signName:"",
   },
 
   beginSign:function(e){
     var that = this;
     that.data.signKey = e.detail.value.signKey
+    that.data.signName = e.detail.value.signName
     var signkey = ""
     if (that.data.signKey != "") {
       console.log(that.data.signKey);
       wx.cloud.database().collection('signlist')
       .where({
-        signKey:that.data.signKey 
+        signKey:that.data.signKey, 
+        signName:that.data.signName
       })
       .get()
       .then(res=>
@@ -24,13 +27,13 @@ Page({
           console.log('请求数据成功',res.data)
           if(res.data.length==0){
             wx.showToast({
-              title: '签到码输入错误',
+              title: '签到码或签到名称      输入错误',
               icon: 'none'
             })
           }else{
             wx.redirectTo({
               //url:'/pages/sign/sign',
-              url:'/pages/signIn/signIn?signKey='+that.data.signKey,
+              url:'/pages/signIn/signIn?signName='+that.data.signName,
             })
           }
         })

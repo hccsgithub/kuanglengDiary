@@ -25,3 +25,6 @@
   justify-content: center;
   color: gray;
 }
+.ligin-button{
+  margin-top:20px;
+}

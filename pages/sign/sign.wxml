@@ -1,6 +1,9 @@
 <!--pages/sign/sign.wxml-->
 <form bindsubmit='beginSign'>
   <view class="inputView" style="margin-top: 40% ">
+    <input class="input" type='number' name='signName' placeholder="请输入考勤名称"></input>
+  </view>
+  <view class="inputView" style="margin-top: 5% ">
     <input class="input" type='number' name='signKey' placeholder="请输入考勤口令"></input>
   </view>
 
