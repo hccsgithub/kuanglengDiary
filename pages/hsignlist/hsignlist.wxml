@@ -1,17 +1,9 @@
 <!--pages/hsignlist/hsignlist.wxml-->
 <view class='list_num'>已签到人数:{{length}}</view>
 <view class='list_top'>
-  <text>学号</text>
-  <text style="margin-right: 10px;">姓名</text>
-  
+  <text style="font-size: 16pt;">学号</text>
+  <text style="font-size: 16pt;margin-right: 10px;">姓名</text>
 </view>
-<!-- <template name="msgItem">
-  <view class='list'>
-    <text class='slesson'>{{studentNum}}</text>
-    <text class='sclass'>{{studentName}}</text>
-    <text class='signTime'>{{signTime}}</text>
-  </view>
-</template> -->
 <view class='list' wx:for="{{mysignlist}}">
   <!-- <template is="msgItem" data="{{...item}}" /> -->
   <view class="box">

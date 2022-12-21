@@ -48,7 +48,6 @@ Page({
   signin(){
     wx.redirectTo({
       url:'/pages/sign/sign',
-      //url:'/pages/signIn/signIn',
     })
   },
   create(){

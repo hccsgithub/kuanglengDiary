@@ -2,13 +2,33 @@
 // pages/createdSign/createdSign.js
 Page({
   data: {
+    openid:"",
     createdSign: [],
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      wx.cloud.database().collection('signlist').get()
+    var that = this
+    wx.cloud.callFunction({
+      name:'getData'
+    })
+    .then(res =>{
+      console.log('成功',res)
+      this.setData({
+        openid : res.result.openid
+      })
+    })
+    .catch(res =>{
+      console.log('失败',res)
+    })
+
+      wx.cloud.database().collection('signlist')
+      .where({
+        // _openid : that.data.openid
+        _openid:'okcQZ5ChR0YqX0eQQOFvD44ZMVd0'
+      })
+      .get()
       .then(res=>
         {
           console.log('请求数据成功',res.data)
