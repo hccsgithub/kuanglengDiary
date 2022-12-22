@@ -1,6 +1,5 @@
 // pages/create/create.js
 Page({
-
   data: {
     openid :"",
     signKey: "",

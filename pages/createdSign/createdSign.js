@@ -25,8 +25,7 @@ Page({
 
       wx.cloud.database().collection('signlist')
       .where({
-        // _openid : that.data.openid
-        _openid:'okcQZ5ChR0YqX0eQQOFvD44ZMVd0'
+         _openid : that.data.openid
       })
       .get()
       .then(res=>
