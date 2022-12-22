@@ -7,8 +7,9 @@
    margin-right: 70rpx;
    margin-bottom: 70rpx;
    margin-top: 100rpx;
-    padding: 10rpx;
+  padding: 10rpx;
 }
+
 .style2{
      margin-left: 70rpx;
    margin-right: 70rpx;
