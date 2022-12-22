@@ -1,4 +1,7 @@
 <!--pages/hsignlist/hsignlist.wxml-->
+<view class="btn-area" style="margin-top:15px; margin-left: 100px;">
+  <button style="margin: 0rpx 0;background-color: #f8c72c;" type="primary" bindtap='stopSign' data-id="{{id}}">{{stop}}</button>   
+</view>
 <view class='list_num'>已签到人数:{{length}}</view>
 <view class='list_top'>
   <text style="font-size: 14pt; padding-left:10px;">学号</text>

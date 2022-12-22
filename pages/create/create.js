@@ -5,7 +5,8 @@ Page({
     signKey: "",
     signName:"",
     latitude: "",
-    longitude: ""
+    longitude: "",
+    flag:"true"
 
   },
   createSign:function(e){
@@ -19,7 +20,8 @@ Page({
         data:{
             // openid:that.data.openid,
             signKey:that.data.signKey,
-            signName:that.data.signName
+            signName:that.data.signName,
+            flag:"true"
         },
         success:res => {
           console.log(res);

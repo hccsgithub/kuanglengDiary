@@ -4,6 +4,8 @@
 <view class="lesson" bindtap="getSignList" data-id="{{item.signName}}">
   <test>签到名称：{{item.signName}}</test>
   <test class="signpic">签到码：{{item.signKey}}</test>
+  <!-- <buttom class="remove" size='mini' bindtap='stopSign' data-id="{{item._id}}">停止考勤</buttom> -->
   <buttom class="remove" size='mini' bindtap='Bremove' data-id="{{item._id}}">删除</buttom>
+  
 </view>
 </view>

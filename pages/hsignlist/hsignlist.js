@@ -8,7 +8,9 @@ Page({
     mysignlist: [],
     length: 0,
     openid:"",
-    signName:""
+    signName:"",
+    id:"",
+    stop:"停止考勤"
   },
 
   /**
@@ -28,7 +30,7 @@ Page({
       .then(res =>{
         console.log('成功',res)
         this.setData({
-          openid : res.result.openid
+          openid : res.result.openid,
         })
       })
       .catch(res =>{
@@ -55,9 +57,45 @@ Page({
         console.log('查看签到失败',err)
       })
     
+      wx.cloud.database().collection('signlist')
+      .where({
+         _openid : that.data.openid
+      })
+      .get()
+      .then(res=>
+        {
+          console.log('请求id成功',res.data)
+          console.log('请求id成功2',res.data[0]._id)
+          this.setData(
+            {
+              id:res.data[0]._id
+            }
+          )
+        })
+        .catch(err=>{
+          console.log('请求id失败',err)
+        })
 
   },
-
+  stopSign:function(e){
+    console.log('要更改的签到是',e)
+    console.log('要更改的签到id是',e.currentTarget.dataset.id)
+    wx.cloud.database().collection('signlist')
+    .doc(e.currentTarget.dataset.id)
+    .update({
+      data:{
+        flag:"false"
+      }
+      
+    })
+    .then(res => {
+      console.log('修改成功',res)
+      this.data.stop = "已停止"
+    })
+    .catch(res => {
+      console.error('修改失败',res)
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

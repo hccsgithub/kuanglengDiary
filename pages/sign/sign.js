@@ -19,7 +19,8 @@ Page({
       wx.cloud.database().collection('signlist')
       .where({
         signKey:that.data.signKey, 
-        signName:that.data.signName
+        signName:that.data.signName,
+        flag:"true"
       })
       .get()
       .then(res=>
@@ -27,7 +28,7 @@ Page({
           console.log('请求数据成功',res.data)
           if(res.data.length==0){
             wx.showToast({
-              title: '签到码或签到名称      输入错误',
+              title: '签到码或签到名称不存在',
               icon: 'none'
             })
           }else{

@@ -24,6 +24,7 @@ page {
 .remove{
   margin-right:10px;
   color:grey;
+  font-size: 12px;
 }
 .mylesson {
   margin-top: 20px;
